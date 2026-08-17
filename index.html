@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- 文字コードをUTF-8に設定し、日本語表示を正しく行えるようにする -->
+    <meta charset="UTF-8">
+
+    <!-- スマートフォンでも画面幅に応じて適切に表示されるようにビューポートを設定する -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ブラウザのタブや検索結果に表示されるページタイトルを設定する -->
+    <title>MY Portfolio</title>
+
+    <!-- 外部のCSSファイルを読み込み、見た目の装飾を適用する -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         メインコンテンツ
+         About・Skills・Works・Contactの各内容をまとめて表示するメイン部分
+    ========================================= -->
+    <main class="page-main">
+
+        <!-- ========================================
+             ファーストビュー
+             画面全体を使い、ポートフォリオのタイトルを中央に大きく表示する導入部分
+        ========================================= -->
+        <section id="first-view" class="first-view">
+            <div class="first-view-wave" aria-hidden="true">
+                <!--
+                    ECG風の波形を画面左から右へ描く背景演出。
+                    薄いグレーの線を太く、ゆっくりとした速度で流し、
+                    音声・生命感・技術的な動きのような印象を与える。
+                -->
+                <svg class="ecg-wave" viewBox="0 0 1600 500" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="ecg-wave-line" d="M0 250 L52 250 L104 250 L138 214 L176 304 L214 228 L252 250 L302 250 L342 250 L380 190 L416 318 L454 204 L490 250 L536 250 L592 250 L634 212 L668 292 L704 230 L738 250 L782 250 L820 250 L854 186 L890 340 L930 218 L968 250 L1010 250 L1050 250 L1088 196 L1130 308 L1168 224 L1204 250 L1248 250 L1300 250 L1342 214 L1384 294 L1428 238 L1464 250 L1518 250 L1600 250" />
+                </svg>
+            </div>
+
+            <div class="first-view-inner">
+                <h2>MY Portfolio</h2>
+                <p>Programming × Music × Creative</p>
+            </div>
+        </section>
+
+        <!-- ========================================
+             ヘッダー
+             ファーストビューの直下に配置し、スクロール後に上部へ固定されるようにする
+        ========================================= -->
+        <header class="site-header">
+
+            <!-- ページ内リンクを設定し、クリックで各セクションへ移動できるようにする -->
+            <nav class="site-nav" aria-label="ページ内メニュー">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#applications">Applications</a></li>
+                    <li><a href="#creative">Creative Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <!-- ========================================
+             Heroセクション
+             ページ最上部でサイトの概要を最初に伝える導入エリア
+        ========================================= -->
+        <section id="hero" class="content-section hero-section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2 class="section-title">About This Site</h2>
+                </div>
+                <p>
+                    このサイトは、これまでに制作したアプリケーションや創作作品をまとめたポートフォリオです。
+                    プログラミングと音楽制作の両方に取り組んできた経験を活かし、技術力だけでなく、ものづくりに対する姿勢や創造性も伝えられるよう構成しています。
+                </p>
+            </div>
+        </section>
+
+        <!-- ========================================
+             自己紹介
+             自分のプロフィールや背景を伝えるためのエリア
+        ========================================= -->
+        <section id="about" class="content-section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                </div>
+
+                <!-- アイコン画像と文章を横並びにするためのコンテナ -->
+                <div class="about-container">
+
+                    <!-- アイコン画像 -->
+                    <div class="about-image">
+                        <img src="images/icon.png" alt="プロフィールアイコン">
+                    </div>
+
+                    <!-- 自己紹介文 -->
+                    <div class="about-text">
+                        <p>
+                            さいたまIT・WEB専門学校にてIT技術を学んでいる専門学生です。
+                            ゲーム開発などのクリエイティブ分野に興味があり、授業や個人制作を通して実践的なスキルを身につけています。また、趣味としてDTMによるオリジナル楽曲制作にも取り組んでいます。
+                            プログラミングと音楽制作で培った経験を活かし、「技術」と「創作」の両方を融合できるITクリエイターを目指しています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             スキル一覧
+             使える技術やツールを一覧で見せるためのエリア
+        ========================================= -->
+        <section id="skills" class="content-section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2 class="section-title">Skills</h2>
+                </div>
+                <p>
+                    プログラミング言語やツールの習熟度を5段階で評価しています。<br>
+                    ★の数が多いほど習熟度が高いことを示します。
+                </p>
+
+                <ul class="skill-grid">
+                    <li class="card skill-card">
+                        <div class="card-header skill-card-header">
+                            <h3 class="card-title">HTML</h3>
+                            <img class="skill-logo" src="https://skillicons.dev/icons?i=html" alt="HTML icon" />
+                        </div>
+                        <div class="card-body">
+                            <div class="rating" aria-label="習熟度 5段階">
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="card skill-card">
+                        <div class="card-header skill-card-header">
+                            <h3 class="card-title">CSS</h3>
+                            <img class="skill-logo" src="https://skillicons.dev/icons?i=css" alt="CSS icon" />
+                        </div>
+                        <div class="card-body">
+                            <div class="rating" aria-label="習熟度 5段階">
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="card skill-card">
+                        <div class="card-header skill-card-header">
+                            <h3 class="card-title">JavaScript</h3>
+                            <img class="skill-logo" src="https://skillicons.dev/icons?i=js" alt="JavaScript icon" />
+                        </div>
+                        <div class="card-body">
+                            <div class="rating" aria-label="習熟度 5段階">
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="card skill-card">
+                        <div class="card-header skill-card-header">
+                            <h3 class="card-title">Python</h3>
+                            <img class="skill-logo" src="https://skillicons.dev/icons?i=py" alt="Python icon" />
+                        </div>
+                        <div class="card-body">
+                            <div class="rating" aria-label="習熟度 5段階">
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="card skill-card">
+                        <div class="card-header skill-card-header">
+                            <h3 class="card-title">C++</h3>
+                            <img class="skill-logo" src="https://skillicons.dev/icons?i=cpp" alt="C++ icon" />
+                        </div>
+                        <div class="card-body">
+                            <div class="rating" aria-label="習熟度 5段階">
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="card skill-card">
+                        <div class="card-header skill-card-header">
+                            <h3 class="card-title">Lua</h3>
+                            <img class="skill-logo" src="https://skillicons.dev/icons?i=lua" alt="Lua icon" />
+                        </div>
+                        <div class="card-body">
+                            <div class="rating" aria-label="習熟度 5段階">
+                                <span class="star active">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========================================
+             アプリケーション一覧
+             Webアプリやゲームなどの実作品を紹介するメインセクション
+        ========================================= -->
+        <section id="applications" class="content-section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2 class="section-title">Applications</h2>
+                </div>
+                <p>
+                    これまでに制作したWebアプリケーションやゲームなどの作品を紹介します。<br>
+                    各作品の概要、使用技術、GitHubへのリンクなどを掲載しています。
+                </p>
+
+                <div class="work-grid">
+                    <article class="card work-card">
+                        <div class="card-media">
+                            <img class="work-image" src="images/app1.png" alt="Sample App のスクリーンショット">
+                        </div>
+
+                        <div class="card-body work-info">
+                            <div class="card-header">
+                                <h4 class="card-title">Sample App</h4>
+                            </div>
+
+                            <p class="card-description work-description">
+                                ユーザー体験を重視したシンプルなWebアプリケーションです。直感的な操作性と、見やすい情報設計を意識して制作しました。
+                            </p>
+
+                            <ul class="detail-list work-details">
+                                <li><span>使用技術</span><strong>HTML / CSS / JavaScript</strong></li>
+                                <li><span>リンク</span><strong><a href="https://github.com/example" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card work-card">
+                        <div class="card-media">
+                            <img class="work-image" src="images/app2.png" alt="Brock Breakerz のスクリーンショット">
+                        </div>
+
+                        <div class="card-body work-info">
+                            <div class="card-header">
+                                <h4 class="card-title">Brock Breakerz</h4>
+                            </div>
+
+                            <p class="card-description work-description">
+                                チームで制作したブロック崩しゲームです。Pygameを使用して開発し、ゲームのルールやUIデザインにこだわりました。
+                            </p>
+
+                            <ul class="detail-list work-details">
+                                <li><span>使用技術</span><strong>Python / Pygame / Pillow</strong></li>
+                                <li><span>リンク</span><strong><a href="https://github.com/ete-git/Block_Breakerz" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card work-card">
+                        <div class="card-media">
+                            <img class="work-image" src="images/image-3.png" alt="パスワードジェネレータ のスクリーンショット">
+                        </div>
+
+                        <div class="card-body work-info">
+                            <div class="card-header">
+                                <h4 class="card-title">パスワードジェネレータ</h4>
+                            </div>
+
+                            <p class="card-description work-description">
+                                CLIで動作するパスワードジェネレータです。ユーザーが指定した条件に基づいて、ランダムなパスワードを生成します。生成したパスワードを簡易的に暗号化する機能も備えています。
+                            </p>
+
+                            <ul class="detail-list work-details">
+                                <li><span>使用技術</span><strong>Python / Cryptography</strong></li>
+                                <li><span>リンク</span><strong><a href="https://github.com/ete-git/cli-password-generator" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="card work-card">
+                        <div class="card-media">
+                            <img class="work-image" src="images/image-4.png" alt="ポートフォリオサイト のスクリーンショット">
+                        </div>
+
+                        <div class="card-body work-info">
+                            <div class="card-header">
+                                <h4 class="card-title">ポートフォリオサイト</h4>
+                            </div>
+
+                            <p class="card-description work-description">
+                                自身の制作実績をまとめたポートフォリオサイトです。シンプルで見やすいデザインを意識して制作しました。
+                            </p>
+
+                            <ul class="detail-list work-details">
+                                <li><span>使用技術</span><strong>HTML / CSS / JavaScript</strong></li>
+                                <li><span>リンク</span><strong><a href="https://github.com/ete-git/ete-git.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             創作作品一覧
+             音楽や作品制作の成果を紹介するメインセクション
+        ========================================= -->
+        <section id="creative" class="content-section creative-section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2 class="section-title">Creative Works</h2>
+                </div>
+                <p>
+                    これまでに制作したオリジナル楽曲を幾つか紹介します。<br>
+                    各楽曲のジャンル、BPM、簡単な説明とともに、試聴できるようにしています。
+                </p>
+
+                <div class="music-list">
+                    <article class="card music-card">
+                        <div class="music-player">
+                            <div class="card-media music-disc" aria-hidden="true"></div>
+
+                            <div class="card-body music-content">
+                                <div class="card-header music-header">
+                                    <p class="music-label">Track 01</p>
+                                    <h4 class="card-title">IGNITED</h4>
+                                </div>
+
+                                <ul class="detail-list music-details">
+                                    <li><span>Genre</span><strong>Metal</strong></li>
+                                    <li><span>BPM</span><strong>210</strong></li>
+                                    <li><span>Description</span><strong>疾走感のあるメタル楽曲</strong></li>
+                                </ul>
+
+                                <audio controls preload="metadata">
+                                    <source src="music/ignited.mp3" type="audio/mpeg">
+                                    お使いのブラウザでは音声を再生できません。
+                                </audio>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card music-card">
+                        <div class="music-player">
+                            <div class="card-media music-disc" aria-hidden="true"></div>
+
+                            <div class="card-body music-content">
+                                <div class="card-header music-header">
+                                    <p class="music-label">Track 02</p>
+                                    <h4 class="card-title">Voltage Step</h4>
+                                </div>
+
+                                <ul class="detail-list music-details">
+                                    <li><span>Genre</span><strong>Game Music</strong></li>
+                                    <li><span>BPM</span><strong>140</strong></li>
+                                    <li><span>Description</span><strong>ハチャメチャ感のあるゲーム音楽</strong></li>
+                                </ul>
+
+                                <audio controls preload="metadata">
+                                    <source src="music/voltage_step.mp3" type="audio/mpeg">
+                                    お使いのブラウザでは音声を再生できません。
+                                </audio>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card music-card">
+                        <div class="music-player">
+                            <div class="card-media music-disc" aria-hidden="true"></div>
+
+                            <div class="card-body music-content">
+                                <div class="card-header music-header">
+                                    <p class="music-label">Track 03</p>
+                                    <h4 class="card-title">星空の幻想</h4>
+                                </div>
+
+                                <ul class="detail-list music-details">
+                                    <li><span>Genre</span><strong>Pop</strong></li>
+                                    <li><span>BPM</span><strong>105</strong></li>
+                                    <li><span>Description</span><strong>夜の星空をイメージした曲</strong></li>
+                                </ul>
+
+                                <audio controls preload="metadata">
+                                    <source src="music/星空の幻想.mp3" type="audio/mpeg">
+                                    お使いのブラウザでは音声を再生できません。
+                                </audio>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             お問い合わせ
+             GitHubやEmailなど、連絡先をまとめて表示するエリア
+        ========================================= -->
+        <section id="contact" class="content-section">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2 class="section-title">Contact</h2>
+                </div>
+                <ul class="contact-list">
+                    <li>GitHub</li>
+                    <li>Email</li>
+                    <li>SoundCloud</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================
+         フッター
+         コピーライトなどの補足情報を表示する下部エリア
+    ========================================= -->
+    <footer>
+        <p>&copy; 2026 All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み
+         スクロール時のアニメーション処理を動かすために読み込む -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
