@@ -353,11 +353,13 @@ p, li {
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 0.7rem;
+    min-width: 0;
 }
 
 .card-title {
     margin: 0;
     font-size: 1.5rem;
+    overflow-wrap: anywhere;
 }
 
 .card-body {
@@ -605,12 +607,23 @@ p, li {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    min-width: 0;
     padding-bottom: 0.45rem;
     border-bottom: 1px solid var(--border-color);
 }
 
 .detail-list span,
-.music-details span { color: #666; }
+.music-details span {
+    flex-shrink: 0;
+    color: #666;
+}
+
+.detail-list strong,
+.music-details strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
 
 .music-card audio {
     display: block;
@@ -639,7 +652,8 @@ p, li {
 .contact-list li {
     padding: 0.75rem 1.1rem;
     border: 1px solid var(--accent-color);
-    border-radius: 999px;
+    /* Contact項目をピル型ではなく、角の丸い長方形にする */
+    border-radius: 8px;
     background: #f5f5f4;
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
@@ -683,6 +697,45 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* スマホではナビを3列2行にして、全メニューを画面内に収める */
+    .site-header {
+        justify-content: center;
+    }
+
+    .site-nav {
+        width: 100%;
+    }
+
+    .site-nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .site-nav a {
+        display: block;
+        width: 100%;
+        padding: 0.4rem 0.15rem;
+        font-size: clamp(0.78rem, 3.3vw, 1rem);
+        white-space: nowrap;
+    }
+
+    /* ファーストビューのサブタイトルをスマホ幅でも1行に収める */
+    .first-view-inner p {
+        font-size: clamp(0.85rem, 4.2vw, 1.2rem);
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+    }
+
+    /* 各セクションの説明文だけをスマホ向けの大きさと行間に調整する */
+    .content-section .section-inner > p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    /* 余白を狭めて、スマホの表示領域をカード幅として使う */
     .page-main { padding-bottom: 3rem; }
     .content-section,
     .sub-section { padding: 1.5rem 0; }
@@ -691,10 +744,116 @@ footer {
     #skills,
     #applications,
     #creative,
-    #contact { scroll-margin-top: 14rem; }
+    #contact { scroll-margin-top: 8rem; }
     .about-container { flex-direction: column; }
-    .work-grid { grid-template-columns: 1fr; }
-    #applications { grid-template-columns: 1fr; }
+
+    /* カードの横幅を抑え、スマホでもSkillsとApplicationsを2列で表示する */
+    .skill-grid,
+    .work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill-grid,
+    .work-grid,
+    .music-list {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    /* 2列カードの限られた横幅に合わせて、見出しと余白を縮小する */
+    .skill-card {
+        padding: 0.8rem 0.7rem;
+    }
+
+    .skill-card .card-title,
+    .work-card .card-title {
+        font-size: 1.05rem;
+        letter-spacing: 0;
+    }
+
+    .skill-logo {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 7px;
+    }
+
+    .rating {
+        gap: 0.1rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+    }
+
+    .work-info {
+        padding: 0.75rem 0.7rem 0.85rem;
+    }
+
+    .work-description {
+        font-size: 0.82rem;
+        line-height: 1.55;
+        margin-bottom: 0.7rem;
+    }
+
+    .work-details,
+    .work-details a {
+        font-size: 0.78rem;
+        line-height: 1.45;
+    }
+
+    /* 使用技術とリンクの情報量を抑え、2列カード内で読みやすく収める */
+    .work-details li,
+    .work-details span,
+    .work-details strong,
+    .work-details a {
+        font-size: 0.68rem;
+        line-height: 1.4;
+    }
+
+    /* 長い技術名や説明文をカード幅内で自然に折り返す */
+    .detail-list li,
+    .music-details li {
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .detail-list strong,
+    .music-details strong {
+        flex: 1 1 auto;
+    }
+
+    /* 音楽カードはディスクと本文を縦に並べ、音声操作部の幅を確保する */
+    .music-player {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .music-disc {
+        align-self: center;
+    }
+
+    .music-content {
+        width: 100%;
+    }
+
+    /* Musicカードもスマホ用に縮小し、タイトルや曲情報の改行を抑える */
+    .music-card {
+        padding: 0.9rem;
+    }
+
+    .music-card h4 {
+        font-size: 1.35rem;
+        letter-spacing: 0;
+    }
+
+    .music-label {
+        font-size: 0.7rem;
+    }
+
+    .music-details,
+    .music-details strong {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
     #contact ul {
         flex-direction: column;
         align-items: center;
