@@ -2,7 +2,7 @@
    Variables
 ======================================== */
 :root {
-    --text-color: #3a3a3a;
+    --text-color: #000000;
     --bg-color: #f2f2f1;
     --section-bg-light: #eeeeee;
     --section-bg-dark: #dadada;
@@ -132,7 +132,7 @@ p, li {
 
 .site-nav ul {
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     list-style: none;
     padding: 0 1rem;
     margin: 0;
@@ -143,14 +143,27 @@ p, li {
     padding: 0.7rem 0.9rem;
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
     color: var(--accent-color-dark);
+    background-color: var(--accent-color-light);
+}
+
+.site-nav a:focus-visible,
+.work-details a:focus-visible {
+    outline: 3px solid var(--accent-color-dark);
+    outline-offset: 3px;
+    animation: focus-line-fade 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes focus-line-fade {
+    from { outline-color: transparent; }
+    to { outline-color: var(--accent-color-dark); }
 }
 
 /* ========================================
@@ -163,6 +176,7 @@ p, li {
 #creative,
 #contact {
     padding: 2.2rem 0;
+    scroll-margin-top: 5rem;
 }
 
 #skills,
@@ -296,6 +310,30 @@ p, li {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: 0 2px 10px var(--shadow-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-color), 0 4px 14px var(--shadow-color);
+    animation: focus-card-fade 1s ease-in-out infinite alternate;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-color), 0 4px 14px var(--shadow-color);
+    animation: none;
+}
+
+@keyframes focus-card-fade {
+    from {
+        border-color: transparent;
+        box-shadow: 0 0 0 0 rgba(129, 151, 128, 0), 0 4px 14px var(--shadow-color);
+    }
+    to {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px var(--accent-color), 0 4px 14px var(--shadow-color);
+    }
 }
 
 .card-header {
@@ -637,6 +675,12 @@ footer {
     .page-main { padding-bottom: 3rem; }
     .content-section,
     .sub-section { padding: 1.5rem 0; }
+    .hero-section,
+    #about,
+    #skills,
+    #applications,
+    #creative,
+    #contact { scroll-margin-top: 14rem; }
     .about-container { flex-direction: column; }
     .work-grid { grid-template-columns: 1fr; }
     #applications { grid-template-columns: 1fr; }
