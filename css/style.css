@@ -228,11 +228,17 @@ p, li { font-size: 1.2rem; }
     box-shadow: 0 8px 18px var(--shadow-color);
 }
 
-.about-text { max-width: 540px; text-align: center; }
+.about-image { text-align: center; }
+
+.profile-name {
+    margin: 0.6rem 0 0;
+    font-weight: 900;
+}
+
+.about-text { max-width: 540px; text-align: left; }
 
 /* Skills */
-.skill-grid,
-.applications-grid {
+.skill-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
@@ -314,7 +320,15 @@ p, li { font-size: 1.2rem; }
 }
 
 .applications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
     align-items: stretch;
+}
+
+#applications .section-inner {
+    width: min(1440px, calc(100% - 2.4rem));
 }
 
 .application-card {
@@ -329,16 +343,38 @@ p, li { font-size: 1.2rem; }
 }
 
 .application-info { padding: 1rem 1.1rem 1.2rem; }
-.application-description { margin: 0 0 1rem; }
-.application-details { margin-bottom: 0; }
 
-.application-details a {
+.application-details {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0;
+}
+
+.application-detail {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 0.8rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.application-detail dt {
+    color: var(--muted-text);
+    font-weight: 700;
+}
+
+.application-detail dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.application-detail a {
     color: var(--accent-color-dark);
     text-decoration: underline;
 }
 
-.application-details a:hover,
-.application-details a:focus-visible {
+.application-detail a:hover,
+.application-detail a:focus-visible {
     color: var(--accent-color);
 }
 

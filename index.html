@@ -68,6 +68,7 @@
                     <!-- アイコン画像 -->
                     <div class="about-image">
                         <img src="images/icon.png" alt="プロフィールアイコン">
+                        <p class="profile-name">ete-git</p>
                     </div>
 
                     <!-- 自己紹介文 -->
@@ -200,77 +201,98 @@
                     <h2 class="section-title">Applications</h2>
                 </div>
                 <p>
-                    これまでに制作したWebアプリケーションやゲームなどの作品を紹介します。<br>
-                    各作品の概要、使用技術、GitHubへのリンクなどを掲載しています。
+                    これまでに制作したアプリケーションやゲームなどの作品を紹介します。<br>
+                    各作品の目的、使用技術、工夫点、課題、GitHubへのリンクを掲載しています。
                 </p>
 
                 <div class="applications-grid">
                     <article class="card application-card">
                         <div class="card-media">
-                            <img class="work-image" src="images/image-1.png" alt="Sample App のスクリーンショット">
+                            <img class="work-image" src="images/image-1.png" alt="ブロック崩しゲーム のスクリーンショット">
                         </div>
 
                         <div class="card-body application-info">
                             <div class="card-header">
-                                <h4 class="card-title">シフト管理アプリ</h4>
+                                <h4 class="card-title">ブロック崩しゲーム</h4>
                             </div>
 
-                            <p class="card-description application-description">
-                                チームで制作したシフト管理を効率化するためのWebアプリケーションです。従業員がシフトの出勤希望や休暇申請を効率的に管理できることを目的としています。
-                            </p>
-
-                            <ul class="detail-list application-details">
-                                <li><span>使用技術</span><strong>HTML / JavaScript / Google Apps Script</strong></li>
-                                <li><span>リンク</span><strong><a href="https://github.com/SIW-ShiftSystem/shift-app-public" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
-                            </ul>
+                            <dl class="application-details">
+                                <div class="application-detail">
+                                    <dt>目的</dt>
+                                    <dd>チームで開発プロセスを実際に経験するとともに、
+                                        Pygameの基本的な仕組みやゲーム開発の流れを学ぶことを目的として制作しました。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>使用技術</dt>
+                                    <dd>Python / Pygame / Pillow / PyInstaller</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>担当</dt>
+                                    <dd>チームリーダー、進捗管理、結合・テスト</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>工夫点</dt>
+                                    <dd>各メンバーが制作した個性のあるステージを難易度ごとに整理し、
+                                        進行に合わせて難易度が上がる構成にした。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>課題</dt>
+                                    <dd>開発中でコードの書き方や進捗状況の共有に課題がありました。
+                                        そのため、開発初期に仕様やルールを明確に定め、チーム内の連携を改善したいと考えています。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>リンク</dt>
+                                    <dd><a href="https://github.com/ete-git/Block_Breakerz" target="_blank" rel="noopener noreferrer">GitHub</a></dd>
+                                </div>
+                            </dl>
                         </div>
                     </article>
 
                     <article class="card application-card">
                         <div class="card-media">
-                            <img class="work-image" src="images/image-2.png" alt="Brock Breakerz のスクリーンショット">
+                            <img class="work-image" src="images/image-2.png" alt="パスワードジェネレーター のスクリーンショット">
                         </div>
 
                         <div class="card-body application-info">
                             <div class="card-header">
-                                <h4 class="card-title">Brock Breakerz</h4>
+                                <h4 class="card-title">パスワードジェネレーター</h4>
                             </div>
 
-                            <p class="card-description application-description">
-                                チームで制作したブロック崩しゲームです。Pygameを使用して開発し、ゲームのルールやUIデザインにこだわりました。
-                            </p>
-
-                            <ul class="detail-list application-details">
-                                <li><span>使用技術</span><strong>Python / Pygame / Pillow</strong></li>
-                                <li><span>リンク</span><strong><a href="https://github.com/ete-git/Block_Breakerz" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
-                            </ul>
+                            <dl class="application-details">
+                                <div class="application-detail">
+                                    <dt>目的</dt>
+                                    <dd>ランダムなパスワードを手軽に生成できるツールを制作し、
+                                        Pythonの基本的な入力処理や乱数生成について学ぶことを目的としました。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>使用技術</dt>
+                                    <dd>Python / Cryptography</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>担当</dt>
+                                    <dd>企画・設計・実装</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>工夫点</dt>
+                                    <dd>文字数や文字種を指定でき、生成したパスワードをTXTファイルへ出力し、
+                                        任意で暗号化できるようにした。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>課題</dt>
+                                    <dd>現状、CLI上での操作に限定されています。
+                                        そのため、CLIに不慣れなユーザーでも直感的に利用できるよう、GUIを導入することが課題です。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>リンク</dt>
+                                    <dd><a href="https://github.com/ete-git/cli-password-generator" target="_blank" rel="noopener noreferrer">GitHub</a></dd>
+                                </div>
+                            </dl>
                         </div>
                     </article>
 
                     <article class="card application-card">
                         <div class="card-media">
-                            <img class="work-image" src="images/image-3.png" alt="パスワードジェネレータ のスクリーンショット">
-                        </div>
-
-                        <div class="card-body application-info">
-                            <div class="card-header">
-                                <h4 class="card-title">パスワードジェネレータ</h4>
-                            </div>
-
-                            <p class="card-description application-description">
-                                CLIで動作するパスワードジェネレータです。ユーザーが指定した条件に基づいて、ランダムなパスワードを生成します。生成したパスワードを簡易的に暗号化する機能も備えています。
-                            </p>
-
-                            <ul class="detail-list application-details">
-                                <li><span>使用技術</span><strong>Python / Cryptography</strong></li>
-                                <li><span>リンク</span><strong><a href="https://github.com/ete-git/cli-password-generator" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <article class="card application-card">
-                        <div class="card-media">
-                            <img class="work-image" src="images/image-4.png" alt="ポートフォリオサイト のスクリーンショット">
+                            <img class="work-image" src="images/image-3.png" alt="ポートフォリオサイト のスクリーンショット">
                         </div>
 
                         <div class="card-body application-info">
@@ -278,14 +300,35 @@
                                 <h4 class="card-title">ポートフォリオサイト</h4>
                             </div>
 
-                            <p class="card-description application-description">
-                                自身の制作実績をまとめたポートフォリオサイトです。シンプルで見やすいデザインを意識して制作しました。
-                            </p>
-
-                            <ul class="detail-list application-details">
-                                <li><span>使用技術</span><strong>HTML / CSS / JavaScript</strong></li>
-                                <li><span>リンク</span><strong><a href="https://github.com/ete-git/ete-git.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
-                            </ul>
+                            <dl class="application-details">
+                                <div class="application-detail">
+                                    <dt>目的</dt>
+                                    <dd>これまでに制作したアプリケーションや創作作品をまとめ、
+                                        技術と創作の両方を伝えられるようにする。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>使用技術</dt>
+                                    <dd>HTML / CSS / JavaScript</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>担当</dt>
+                                    <dd>企画・設計・実装</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>工夫点</dt>
+                                    <dd>アニメーションを取り入れたほか、
+                                        レスポンシブ対応により端末に応じてレイアウトが変化するようにしました。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>課題</dt>
+                                    <dd>今後の作品追加を見据えて、情報を整理しやすいカード構成と保守性の高いCSS設計を改善していくことが課題です。
+                                        より見やすく使いやすいサイトを目指します。</dd>
+                                </div>
+                                <div class="application-detail">
+                                    <dt>リンク</dt>
+                                    <dd><a href="https://github.com/ete-git/ete-git.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></dd>
+                                </div>
+                            </dl>
                         </div>
                     </article>
                 </div>
@@ -396,7 +439,7 @@
 
     <!-- フッター部分 -->
     <footer>
-        <p>&copy; 2026 All Rights Reserved.</p>
+        <p>&copy; 2026 ete-git. All Rights Reserved.</p>
     </footer>
 
     <!-- JavaScript読み込み用 -->
