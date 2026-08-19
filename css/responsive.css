@@ -1,0 +1,132 @@
+/* レスポンシブ対応用 */
+@media (max-width: 768px) {
+    .site-nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .site-nav a {
+        display: block;
+        width: 100%;
+        padding: 0.4rem 0.15rem;
+        font-size: clamp(0.78rem, 3.3vw, 1rem);
+        white-space: nowrap;
+    }
+
+    .first-view-inner p {
+        font-size: clamp(0.85rem, 4.2vw, 1.2rem);
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+    }
+
+    .content-section .section-inner > p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .page-main { padding-bottom: 3rem; }
+    .content-section { padding: 1.5rem 0; }
+
+    .hero-section,
+    #about,
+    #skills,
+    #applications,
+    #creative,
+    #contact { scroll-margin-top: 8rem; }
+
+    .about-container { flex-direction: column; }
+
+    .skill-grid,
+    .applications-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill-grid,
+    .applications-grid,
+    .music-list {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .skill-card { padding: 0.8rem 0.7rem; }
+
+    .skill-card .card-title,
+    .application-card .card-title {
+        font-size: 1.05rem;
+        letter-spacing: 0;
+    }
+
+    .skill-logo {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 7px;
+    }
+
+    .rating {
+        gap: 0.1rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+    }
+
+    .application-info { padding: 0.75rem 0.7rem 0.85rem; }
+
+    .application-description {
+        font-size: 0.82rem;
+        line-height: 1.55;
+        margin-bottom: 0.7rem;
+    }
+
+    .application-details,
+    .application-details a {
+        font-size: 0.78rem;
+        line-height: 1.45;
+    }
+
+    .application-details li,
+    .application-details span,
+    .application-details strong,
+    .application-details a {
+        font-size: 0.68rem;
+        line-height: 1.4;
+    }
+
+    .detail-list li,
+    .music-details li {
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .detail-list strong,
+    .music-details strong { flex: 1 1 auto; }
+
+    .music-player {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .music-disc { align-self: center; }
+    .music-content { width: 100%; }
+
+    .music-card { padding: 0.9rem; }
+
+    .music-card h4 {
+        font-size: 1.35rem;
+        letter-spacing: 0;
+    }
+
+    .music-label { font-size: 0.7rem; }
+
+    .music-details,
+    .music-details strong {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+
+    #contact ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
