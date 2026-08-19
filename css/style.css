@@ -1,22 +1,20 @@
-/* ========================================
-   Variables
-======================================== */
+/* 基本設定 */
 :root {
-    --text-color: #000000;
     --bg-color: #f2f2f1;
-    --section-bg-light: #eeeeee;
     --section-bg-dark: #dadada;
     --card-bg: #f8f8f7;
     --accent-color: #819780;
     --accent-color-dark: #647a67;
     --accent-color-light: #dce5dc;
-    --border-color: rgba(58, 58, 58, 0.12);
-    --shadow-color: rgba(58, 58, 58, 0.06);
+    --border-color: #3a3a3a1f;
+    --shadow-color: #3a3a3a10;
+    --line-color: #3a3a3a13;
+    --muted-text: #666666;
+    --gold: #c9b12c;
+    --ink: #353534;
+    --white: #ffffff;
 }
 
-/* ========================================
-   Base
-======================================== */
 * { box-sizing: border-box; }
 
 body {
@@ -24,15 +22,13 @@ body {
     padding: 0;
     font-family: "Yu Gothic", "Hiragino Sans", "Noto Sans JP", sans-serif;
     line-height: 1.8;
-    color: var(--text-color);
     background: var(--bg-color);
-    /* ページの背景だけに、少し濃い斜めの線を等間隔で重ねる */
     --diagonal-line: repeating-linear-gradient(
         135deg,
         transparent 0,
         transparent 38px,
-        rgba(58, 58, 58, 0.075) 39px,
-        rgba(58, 58, 58, 0.075) 40px
+        var(--line-color) 39px,
+        var(--line-color) 40px
     );
     background-image: var(--diagonal-line);
     background-attachment: fixed;
@@ -40,53 +36,28 @@ body {
     overflow-x: hidden;
 }
 
-a, li, p, h2, h3, h4 { 
-    color: var(--text-color); 
-}
+h2, h3, h4 { margin-bottom: 0.6em; letter-spacing: 0.05em; }
+h2 { font-size: 3rem; }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 1.7rem; }
+p, li { font-size: 1.2rem; }
 
-h2, h3, h4 {
-    margin-bottom: 0.6em;
-    letter-spacing: 0.05em;
-}
-
-h2 { 
-    font-size: 3rem; 
-}
-
-h3 {
-    font-size: 2.2rem; 
-}
-
-h4 { 
-    font-size: 1.7rem; 
-}
-
-p, li {
-    font-size: 1.2rem; 
-}
-
-/* ========================================
-   Layout
-======================================== */
+/* レイアウト関連 */
 .page-main {
     width: 100%;
     padding: 0 0 4rem;
 }
 
 .page-main > section {
-    /* 奇数セクションはページ全体の背景をそのまま見せる */
     background: transparent;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
 }
 
 .page-main > section:nth-of-type(2n) {
-    /* 偶数セクションの背景色を設定 */
     background: var(--section-bg-dark);
 }
 
 .content-section {
-    margin: 0;
     padding: 2.2rem 1.8rem;
     background: transparent;
 }
@@ -96,9 +67,7 @@ p, li {
     margin: 0 auto;
 }
 
-.section-header {
-    margin-bottom: 1.25rem;
-}
+.section-header { margin-bottom: 1.25rem; }
 
 .section-title {
     display: inline-block;
@@ -120,15 +89,15 @@ p, li {
     background: rgba(255, 255, 255, 0.72);
 }
 
-.site-nav, .site-nav ul, .site-nav li {
+.site-nav,
+.site-nav ul,
+.site-nav li {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.site-nav {
-    width: 100%;
-}
+.site-nav { width: 100%; }
 
 .site-nav ul {
     flex-wrap: wrap;
@@ -141,7 +110,7 @@ p, li {
 .site-nav a {
     display: inline-block;
     padding: 0.7rem 0.9rem;
-    color: var(--text-color);
+    color: inherit;
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 600;
@@ -161,14 +130,6 @@ p, li {
     animation: focus-line-fade 1.2s ease-in-out infinite alternate;
 }
 
-@keyframes focus-line-fade {
-    from { outline-color: transparent; }
-    to { outline-color: var(--accent-color-dark); }
-}
-
-/* ========================================
-   Sections
-======================================== */
 .hero-section,
 #about,
 #skills,
@@ -180,9 +141,7 @@ p, li {
 }
 
 #skills,
-#contact {
-    text-align: center;
-}
+#contact { text-align: center; }
 
 .hero-section p {
     max-width: 700px;
@@ -190,11 +149,7 @@ p, li {
     font-size: 1.05rem;
 }
 
-/* ========================================
-   First View Wave Background
-   ファーストビューの背景に、左から右へ描かれるECG風の波形を重ねる。
-   薄いグレーで、動きを遅めにして、視線を落ち着かせながらも動的な演出を作る。
-======================================== */
+/* ファーストビュー */
 .first-view {
     position: relative;
     display: flex;
@@ -225,20 +180,13 @@ p, li {
 
 .ecg-wave-line {
     fill: none;
-    stroke: rgba(58, 58, 58, 0.42);
+    stroke: #3a3a3a6b;
     stroke-width: 12;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 1800;
     stroke-dashoffset: 1800;
     animation: ecg-trace 10s linear infinite;
-}
-
-@keyframes ecg-trace {
-    0% { stroke-dashoffset: 1800; opacity: 0.7; }
-    12% { opacity: 1; }
-    65% { stroke-dashoffset: 0; opacity: 1; }
-    100% { stroke-dashoffset: -1800; opacity: 0.7; }
 }
 
 .first-view h2 {
@@ -252,15 +200,26 @@ p, li {
 }
 
 .first-view-inner p {
-    /* ファーストビューのサブタイトルを、画面幅に合わせて少し大きくする */
     margin: 1rem 0 0;
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     color: var(--accent-color-dark);
     letter-spacing: 0.08em;
-    /* タイトルと同じfade-upアニメーションを使い、少し遅れて表示する */
     opacity: 0;
     transform: translateY(30px);
     animation: fade-up 1.2s ease forwards 1s;
+}
+
+/* アニメーション関連 */
+@keyframes focus-line-fade {
+    from { outline-color: transparent; }
+    to { outline-color: var(--accent-color-dark); }
+}
+
+@keyframes ecg-trace {
+    0% { stroke-dashoffset: 1800; opacity: 0.7; }
+    12% { opacity: 1; }
+    65% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: -1800; opacity: 0.7; }
 }
 
 @keyframes fade-up {
@@ -268,9 +227,7 @@ p, li {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========================================
-   About
-======================================== */
+/* About */
 .about-container {
     display: flex;
     justify-content: center;
@@ -291,14 +248,16 @@ p, li {
 
 .about-text { max-width: 540px; text-align: center; }
 
-/* ========================================
-   Skills
-======================================== */
-.skill-grid {
+/* Skills */
+.skill-grid,
+.applications-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* スキルカード同士の余白を広げる */
     gap: 2rem;
+    width: 100%;
+}
+
+.skill-grid {
     max-width: 900px;
     list-style: none;
     padding: 0;
@@ -313,38 +272,10 @@ p, li {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.card:hover,
 .card:focus-within {
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px var(--accent-color), 0 4px 14px var(--shadow-color);
-    animation: focus-card-fade 1s ease-in-out infinite alternate;
-}
-
-.card:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px var(--accent-color), 0 4px 14px var(--shadow-color);
-    animation: card-hover-fade 0.25s ease-out forwards;
-}
-
-@keyframes card-hover-fade {
-    from {
-        border-color: transparent;
-        box-shadow: 0 0 0 0 rgba(129, 151, 128, 0), 0 4px 14px var(--shadow-color);
-    }
-    to {
-        border-color: var(--accent-color);
-        box-shadow: 0 0 0 3px var(--accent-color), 0 4px 14px var(--shadow-color);
-    }
-}
-
-@keyframes focus-card-fade {
-    from {
-        border-color: transparent;
-        box-shadow: 0 0 0 0 rgba(129, 151, 128, 0), 0 4px 14px var(--shadow-color);
-    }
-    to {
-        border-color: var(--accent-color);
-        box-shadow: 0 0 0 3px var(--accent-color), 0 4px 14px var(--shadow-color);
-    }
 }
 
 .card-header {
@@ -362,23 +293,12 @@ p, li {
     overflow-wrap: anywhere;
 }
 
-.card-body {
-    width: 100%;
-}
-
 .skill-card {
     padding: 1.2rem 1.4rem;
     text-align: left;
 }
 
-.skill-card-header {
-    margin-bottom: 0.7rem;
-}
-
 .skill-logo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     width: 2.8rem;
     height: 2.8rem;
     padding: 0.25rem;
@@ -395,13 +315,11 @@ p, li {
     letter-spacing: 0.08em;
 }
 
-.star { color: #353534; }
-.star.active { color: #c9b12c; }
+.star { color: var(--ink); }
+.star.active { color: var(--gold); }
 
-/* ========================================
-   Works
-======================================== */
-.work-card,
+/* Applications */
+.application-card,
 .music-card {
     margin: 0;
     padding: 1rem 1.2rem;
@@ -413,52 +331,36 @@ p, li {
     list-style: none;
 }
 
-#applications {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding-left: 0;
-    padding-right: 0;
-    background: transparent;
-}
-
-.work-grid {
-    /* アプリケーションを2列に並べ、4件を2×2で見せる */
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* アプリケーションカード同士の余白を広げる */
-    gap: 2rem;
+.applications-grid {
     align-items: stretch;
-    width: 100%;
 }
 
-.work-card {
-    width: 100%;
+.application-card {
     overflow: hidden;
     padding: 0;
 }
 
-#applications .work-card {
+#applications .application-card {
     display: flex;
     flex-direction: column;
     min-height: 100%;
 }
 
-.work-info { padding: 1rem 1.1rem 1.2rem; }
-.work-description { margin: 0 0 1rem; }
-.work-details { margin-bottom: 0; }
-.work-details a {
+.application-info { padding: 1rem 1.1rem 1.2rem; }
+.application-description { margin: 0 0 1rem; }
+.application-details { margin-bottom: 0; }
+
+.application-details a {
     color: var(--accent-color-dark);
     text-decoration: underline;
 }
 
-.work-details a:hover,
-.work-details a:focus-visible {
+.application-details a:hover,
+.application-details a:focus-visible {
     color: var(--accent-color);
 }
 
-.work-card .card-media {
-    /* 画像の比率に関係なく、スクリーンショット領域を4:3で固定する */
+.application-card .card-media {
     aspect-ratio: 4 / 3;
     overflow: hidden;
 }
@@ -469,11 +371,11 @@ p, li {
     height: 100%;
     border: 0;
     border-bottom: 1px solid var(--border-color);
-    /* 余白をなくすため、表示領域いっぱいに拡大して表示する */
     object-fit: cover;
 }
 
-.creative-section {
+/* Creative works */
+.music-section {
     width: 100%;
     max-width: none;
     margin: 0;
@@ -482,7 +384,7 @@ p, li {
     background: transparent;
 }
 
-.creative-section .section-header {
+.music-section .section-header {
     margin-bottom: 1.2rem;
     text-align: center;
 }
@@ -490,14 +392,12 @@ p, li {
 .music-list {
     display: flex;
     flex-direction: column;
-    /* 音楽カード同士の余白を広げる */
     gap: 1.6rem;
     max-width: 860px;
     margin: 0 auto;
 }
 
 .music-card {
-    margin: 0;
     padding: 1.3rem 1.4rem;
 }
 
@@ -514,7 +414,6 @@ p, li {
     height: 86px;
     border: 4px solid #d8d5d2;
     border-radius: 50%;
-    /* 同心円と細かな溝で、CDらしい反射と回転感を表現する */
     background:
         repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 4px),
         radial-gradient(circle at center, #f5f5f4 0 15%, #252525 16% 20%, #111 21% 100%);
@@ -532,7 +431,6 @@ p, li {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    /* 中央の穴を少し盛り上がったハブとして見せる */
     background: #d7d7d5;
     transform: translate(-50%, -50%);
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(255, 255, 255, 0.35);
@@ -543,7 +441,6 @@ p, li {
     position: absolute;
     inset: 7px;
     border-radius: 50%;
-    /* 一部だけ明るいリングにして、外周の出っ張りを表現する */
     border: 3px solid transparent;
     border-top-color: rgba(255, 255, 255, 0.38);
     border-right-color: rgba(255, 255, 255, 0.14);
@@ -554,29 +451,18 @@ p, li {
     animation-play-state: running;
     transform: scale(1.12);
     border-color: var(--accent-color-dark);
-    /* 再生中は色を濃くし、外周の段差と反射を目立たせる */
     background:
         repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0 1px, transparent 1px 4px),
         radial-gradient(circle at center, var(--accent-color-light) 0 15%, #363634 16% 20%, #080808 21% 100%);
     box-shadow: 0 0 0 3px rgba(58, 58, 58, 0.16), 0 0 20px rgba(58, 58, 58, 0.3), 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
-.music-card.is-playing .music-disc::after {
-    border-top-color: rgba(255, 255, 255, 0.75);
-    border-right-color: rgba(255, 255, 255, 0.3);
-    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.45), 0 0 4px rgba(255, 255, 255, 0.18);
-}
-
-.music-card.is-playing .music-label {
+.music-card.is-playing .music-label,
+.music-card.is-playing h4 {
     color: var(--accent-color-dark);
-    font-weight: 700;
-    letter-spacing: 0.14em;
 }
-
-.music-card.is-playing h4 { color: var(--accent-color-dark); }
 
 .music-content { flex: 1; min-width: 0; }
-
 .music-header { margin-bottom: 0.7rem; }
 
 .music-label {
@@ -584,13 +470,10 @@ p, li {
     font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #777;
+    color: #777777;
 }
 
-.music-card h4 {
-    margin: 0;
-    font-size: 1.8rem;
-}
+.music-card h4 { margin: 0; font-size: 1.8rem; }
 
 .detail-list,
 .music-details {
@@ -615,7 +498,7 @@ p, li {
 .detail-list span,
 .music-details span {
     flex-shrink: 0;
-    color: #666;
+    color: #666666;
 }
 
 .detail-list strong,
@@ -636,9 +519,7 @@ p, li {
     to { transform: rotate(360deg); }
 }
 
-/* ========================================
-   Contact / Footer
-======================================== */
+/* Contact / footer */
 .contact-list {
     display: flex;
     flex-wrap: wrap;
@@ -652,32 +533,27 @@ p, li {
 .contact-list li {
     padding: 0.75rem 1.1rem;
     border: 1px solid var(--accent-color);
-    /* Contact項目をピル型ではなく、角の丸い長方形にする */
     border-radius: 8px;
     background: #f5f5f4;
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .contact-list li:hover {
-    color: #ffffff;
+    color: var(--white);
     background: var(--accent-color);
     transform: translateY(-2px);
 }
 
 footer {
-    /* フッター全体にも偶数セクションと同じグレーを適用する */
     background: var(--section-bg-dark);
     padding: 1.5rem 1rem 2rem;
-    color: #666666;
+    color: var(--muted-text);
     font-size: 0.95rem;
 }
 
-/* ========================================
-   Reveal animation
-======================================== */
+/* Reveal */
 .reveal {
     opacity: 0;
-    /* 横方向のレイアウトずれを防ぎ、下から上への表示だけにする */
     transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
@@ -687,25 +563,8 @@ footer {
     transform: translateY(0);
 }
 
-/* ========================================
-   Responsive
-======================================== */
-@media (max-width: 1200px) {
-    #applications {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
+/* レスポンシブ対応用 */
 @media (max-width: 768px) {
-    /* スマホではナビを3列2行にして、全メニューを画面内に収める */
-    .site-header {
-        justify-content: center;
-    }
-
-    .site-nav {
-        width: 100%;
-    }
-
     .site-nav ul {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -722,51 +581,45 @@ footer {
         white-space: nowrap;
     }
 
-    /* ファーストビューのサブタイトルをスマホ幅でも1行に収める */
     .first-view-inner p {
         font-size: clamp(0.85rem, 4.2vw, 1.2rem);
         letter-spacing: 0.03em;
         white-space: nowrap;
     }
 
-    /* 各セクションの説明文だけをスマホ向けの大きさと行間に調整する */
     .content-section .section-inner > p {
         font-size: 0.9rem;
         line-height: 1.65;
     }
 
-    /* 余白を狭めて、スマホの表示領域をカード幅として使う */
     .page-main { padding-bottom: 3rem; }
-    .content-section,
-    .sub-section { padding: 1.5rem 0; }
+    .content-section { padding: 1.5rem 0; }
+
     .hero-section,
     #about,
     #skills,
     #applications,
     #creative,
     #contact { scroll-margin-top: 8rem; }
+
     .about-container { flex-direction: column; }
 
-    /* カードの横幅を抑え、スマホでもSkillsとApplicationsを2列で表示する */
     .skill-grid,
-    .work-grid {
+    .applications-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .skill-grid,
-    .work-grid,
+    .applications-grid,
     .music-list {
         width: 100%;
         gap: 1rem;
     }
 
-    /* 2列カードの限られた横幅に合わせて、見出しと余白を縮小する */
-    .skill-card {
-        padding: 0.8rem 0.7rem;
-    }
+    .skill-card { padding: 0.8rem 0.7rem; }
 
     .skill-card .card-title,
-    .work-card .card-title {
+    .application-card .card-title {
         font-size: 1.05rem;
         letter-spacing: 0;
     }
@@ -783,32 +636,28 @@ footer {
         letter-spacing: 0.02em;
     }
 
-    .work-info {
-        padding: 0.75rem 0.7rem 0.85rem;
-    }
+    .application-info { padding: 0.75rem 0.7rem 0.85rem; }
 
-    .work-description {
+    .application-description {
         font-size: 0.82rem;
         line-height: 1.55;
         margin-bottom: 0.7rem;
     }
 
-    .work-details,
-    .work-details a {
+    .application-details,
+    .application-details a {
         font-size: 0.78rem;
         line-height: 1.45;
     }
 
-    /* 使用技術とリンクの情報量を抑え、2列カード内で読みやすく収める */
-    .work-details li,
-    .work-details span,
-    .work-details strong,
-    .work-details a {
+    .application-details li,
+    .application-details span,
+    .application-details strong,
+    .application-details a {
         font-size: 0.68rem;
         line-height: 1.4;
     }
 
-    /* 長い技術名や説明文をカード幅内で自然に折り返す */
     .detail-list li,
     .music-details li {
         align-items: flex-start;
@@ -816,37 +665,24 @@ footer {
     }
 
     .detail-list strong,
-    .music-details strong {
-        flex: 1 1 auto;
-    }
+    .music-details strong { flex: 1 1 auto; }
 
-    /* 音楽カードはディスクと本文を縦に並べ、音声操作部の幅を確保する */
     .music-player {
         align-items: stretch;
         flex-direction: column;
     }
 
-    .music-disc {
-        align-self: center;
-    }
+    .music-disc { align-self: center; }
+    .music-content { width: 100%; }
 
-    .music-content {
-        width: 100%;
-    }
-
-    /* Musicカードもスマホ用に縮小し、タイトルや曲情報の改行を抑える */
-    .music-card {
-        padding: 0.9rem;
-    }
+    .music-card { padding: 0.9rem; }
 
     .music-card h4 {
         font-size: 1.35rem;
         letter-spacing: 0;
     }
 
-    .music-label {
-        font-size: 0.7rem;
-    }
+    .music-label { font-size: 0.7rem; }
 
     .music-details,
     .music-details strong {

@@ -1,57 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <!-- 文字コードをUTF-8に設定し、日本語表示を正しく行えるようにする -->
     <meta charset="UTF-8">
-
-    <!-- スマートフォンでも画面幅に応じて適切に表示されるようにビューポートを設定する -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ブラウザのタブや検索結果に表示されるページタイトルを設定する -->
     <title>MY Portfolio</title>
-
-    <!-- 外部のCSSファイルを読み込み、見た目の装飾を適用する -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-    <!-- ========================================
-         メインコンテンツ
-         About・Skills・Works・Contactの各内容をまとめて表示するメイン部分
-    ========================================= -->
+    <!-- メインコンテンツ部分 -->
     <main class="page-main">
 
-        <!-- ========================================
-             ファーストビュー
-             画面全体を使い、ポートフォリオのタイトルを中央に大きく表示する導入部分
-        ========================================= -->
+        <!-- ファーストビュー部分 -->
         <section id="first-view" class="first-view">
             <div class="first-view-wave" aria-hidden="true">
-                <!--
-                    ECG風の波形を画面左から右へ描く背景演出。
-                    薄いグレーの線を太く、ゆっくりとした速度で流し、
-                    音声・生命感・技術的な動きのような印象を与える。
-                -->
                 <svg class="ecg-wave" viewBox="0 0 1600 500" preserveAspectRatio="none" aria-hidden="true">
                     <path class="ecg-wave-line" d="M0 250 L52 250 L104 250 L138 214 L176 304 L214 228 L252 250 L302 250 L342 250 L380 190 L416 318 L454 204 L490 250 L536 250 L592 250 L634 212 L668 292 L704 230 L738 250 L782 250 L820 250 L854 186 L890 340 L930 218 L968 250 L1010 250 L1050 250 L1088 196 L1130 308 L1168 224 L1204 250 L1248 250 L1300 250 L1342 214 L1384 294 L1428 238 L1464 250 L1518 250 L1600 250" />
                 </svg>
             </div>
 
+            <!-- ファーストビューに表示する文字 -->
             <div class="first-view-inner">
                 <h2>MY Portfolio</h2>
                 <p>Programming × Music × Creative</p>
             </div>
         </section>
 
-        <!-- ========================================
-             ヘッダー
-             ファーストビューの直下に配置し、スクロール後に上部へ固定されるようにする
-        ========================================= -->
+        <!-- グローバルナビ部分 -->
         <header class="site-header">
-
-            <!-- ページ内リンクを設定し、クリックで各セクションへ移動できるようにする -->
             <nav class="site-nav" aria-label="ページ内メニュー">
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -64,10 +40,7 @@
 
         </header>
 
-        <!-- ========================================
-             Heroセクション
-             ページ最上部でサイトの概要を最初に伝える導入エリア
-        ========================================= -->
+        <!-- サイト紹介部分 -->
         <section id="hero" class="content-section hero-section">
             <div class="section-inner">
                 <div class="section-header">
@@ -80,10 +53,7 @@
             </div>
         </section>
 
-        <!-- ========================================
-             自己紹介
-             自分のプロフィールや背景を伝えるためのエリア
-        ========================================= -->
+        <!-- 自己紹介部分 -->
         <section id="about" class="content-section">
             <div class="section-inner">
                 <div class="section-header">
@@ -110,10 +80,7 @@
             </div>
         </section>
 
-        <!-- ========================================
-             スキル一覧
-             使える技術やツールを一覧で見せるためのエリア
-        ========================================= -->
+        <!-- スキル一覧部分 -->
         <section id="skills" class="content-section">
             <div class="section-inner">
                 <div class="section-header">
@@ -224,10 +191,7 @@
             </div>
         </section>
 
-        <!-- ========================================
-             アプリケーション一覧
-             Webアプリやゲームなどの実作品を紹介するメインセクション
-        ========================================= -->
+        <!-- アプリ紹介部分 -->
         <section id="applications" class="content-section">
             <div class="section-inner">
                 <div class="section-header">
@@ -238,85 +202,85 @@
                     各作品の概要、使用技術、GitHubへのリンクなどを掲載しています。
                 </p>
 
-                <div class="work-grid">
-                    <article class="card work-card">
+                <div class="applications-grid">
+                    <article class="card application-card">
                         <div class="card-media">
                             <img class="work-image" src="images/image-1.png" alt="Sample App のスクリーンショット">
                         </div>
 
-                        <div class="card-body work-info">
+                        <div class="card-body application-info">
                             <div class="card-header">
                                 <h4 class="card-title">シフト管理アプリ</h4>
                             </div>
 
-                            <p class="card-description work-description">
+                            <p class="card-description application-description">
                                 チームで制作したシフト管理を効率化するためのWebアプリケーションです。従業員がシフトの出勤希望や休暇申請を効率的に管理できることを目的としています。
                             </p>
 
-                            <ul class="detail-list work-details">
+                            <ul class="detail-list application-details">
                                 <li><span>使用技術</span><strong>HTML / JavaScript / Google Apps Script</strong></li>
                                 <li><span>リンク</span><strong><a href="https://github.com/SIW-ShiftSystem/shift-app-public" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
                             </ul>
                         </div>
                     </article>
 
-                    <article class="card work-card">
+                    <article class="card application-card">
                         <div class="card-media">
                             <img class="work-image" src="images/image-2.png" alt="Brock Breakerz のスクリーンショット">
                         </div>
 
-                        <div class="card-body work-info">
+                        <div class="card-body application-info">
                             <div class="card-header">
                                 <h4 class="card-title">Brock Breakerz</h4>
                             </div>
 
-                            <p class="card-description work-description">
+                            <p class="card-description application-description">
                                 チームで制作したブロック崩しゲームです。Pygameを使用して開発し、ゲームのルールやUIデザインにこだわりました。
                             </p>
 
-                            <ul class="detail-list work-details">
+                            <ul class="detail-list application-details">
                                 <li><span>使用技術</span><strong>Python / Pygame / Pillow</strong></li>
                                 <li><span>リンク</span><strong><a href="https://github.com/ete-git/Block_Breakerz" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
                             </ul>
                         </div>
                     </article>
 
-                    <article class="card work-card">
+                    <article class="card application-card">
                         <div class="card-media">
                             <img class="work-image" src="images/image-3.png" alt="パスワードジェネレータ のスクリーンショット">
                         </div>
 
-                        <div class="card-body work-info">
+                        <div class="card-body application-info">
                             <div class="card-header">
                                 <h4 class="card-title">パスワードジェネレータ</h4>
                             </div>
 
-                            <p class="card-description work-description">
+                            <p class="card-description application-description">
                                 CLIで動作するパスワードジェネレータです。ユーザーが指定した条件に基づいて、ランダムなパスワードを生成します。生成したパスワードを簡易的に暗号化する機能も備えています。
                             </p>
 
-                            <ul class="detail-list work-details">
+                            <ul class="detail-list application-details">
                                 <li><span>使用技術</span><strong>Python / Cryptography</strong></li>
                                 <li><span>リンク</span><strong><a href="https://github.com/ete-git/cli-password-generator" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
                             </ul>
                         </div>
                     </article>
 
-                    <article class="card work-card">
+                    <article class="card application-card">
                         <div class="card-media">
                             <img class="work-image" src="images/image-4.png" alt="ポートフォリオサイト のスクリーンショット">
                         </div>
 
-                        <div class="card-body work-info">
+                        <div class="card-body application-info">
                             <div class="card-header">
                                 <h4 class="card-title">ポートフォリオサイト</h4>
                             </div>
 
-                            <p class="card-description work-description">
+                            <p class="card-description application-description">
                                 自身の制作実績をまとめたポートフォリオサイトです。シンプルで見やすいデザインを意識して制作しました。
                             </p>
 
-                            <ul class="detail-list work-details">
+                            <ul class="detail-list application-details">
                                 <li><span>使用技術</span><strong>HTML / CSS / JavaScript</strong></li>
                                 <li><span>リンク</span><strong><a href="https://github.com/ete-git/ete-git.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></strong></li>
                             </ul>
@@ -326,11 +290,8 @@
             </div>
         </section>
 
-        <!-- ========================================
-             創作作品一覧
-             音楽や作品制作の成果を紹介するメインセクション
-        ========================================= -->
-        <section id="creative" class="content-section creative-section">
+        <!-- 創作物紹介部分 -->
+        <section id="creative" class="content-section music-section">
             <div class="section-inner">
                 <div class="section-header">
                     <h2 class="section-title">Creative Works</h2>
@@ -416,10 +377,7 @@
             </div>
         </section>
 
-        <!-- ========================================
-             お問い合わせ
-             GitHubやEmailなど、連絡先をまとめて表示するエリア
-        ========================================= -->
+        <!-- 連絡先関連 -->
         <section id="contact" class="content-section">
             <div class="section-inner">
                 <div class="section-header">
@@ -428,24 +386,18 @@
                 <ul class="contact-list">
                     <!-- GitHubはプロフィールページへ移動できるリンクとして表示する -->
                     <li><a href="https://github.com/ete-git" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                    <!-- Emailは後から実際のメールアドレスを文字列で設定する -->
-                    <li><a href="mailto:example@example.com">Email</a></li>
                 </ul>
             </div>
         </section>
 
     </main>
 
-    <!-- ========================================
-         フッター
-         コピーライトなどの補足情報を表示する下部エリア
-    ========================================= -->
+    <!-- フッター部分 -->
     <footer>
         <p>&copy; 2026 All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScriptファイルの読み込み
-         スクロール時のアニメーション処理を動かすために読み込む -->
+    <!-- JavaScript読み込み用 -->
     <script src="js/script.js"></script>
 
 </body>
