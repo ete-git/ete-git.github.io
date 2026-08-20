@@ -296,15 +296,11 @@ p, li { font-size: 1.2rem; }
     object-fit: contain;
 }
 
-.rating {
-    display: flex;
-    gap: 0.25rem;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
+.skill-list {
+    color: var(--muted-text);
+    font-size: 1rem;
+    line-height: 1.7;
 }
-
-.star { color: var(--ink); }
-.star.active { color: var(--gold); }
 
 /* Applications */
 .application-card,

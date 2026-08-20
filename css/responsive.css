@@ -71,10 +71,9 @@
         border-radius: 7px;
     }
 
-    .rating {
-        gap: 0.1rem;
-        font-size: 0.95rem;
-        letter-spacing: 0.02em;
+    .skill-list {
+        font-size: 0.82rem;
+        line-height: 1.55;
     }
 
     .application-info { padding: 0.75rem 0.7rem 0.85rem; }
