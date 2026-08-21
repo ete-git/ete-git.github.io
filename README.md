@@ -2,7 +2,7 @@
 自分がこれまでに作成した制作物や創作物を掲載したポートフォリオサイトです。
 
 ## サイトURL
-https://ete-git.github.io/
+https://ete-git.github.io/portfolio-site/
 
 ## 使用技術
 - HTML
